@@ -20,6 +20,18 @@ public class SeleniumWrappers extends BaseTest {
 		this.driver = driver;
 	}
 	
+	public boolean isElementDisplayed(WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.visibilityOf(element));
+			return element.isDisplayed();
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			throw new TestException
+			("failed method <isElementDisplayed> on element " + element);
+		}
+	}
+	
 	public void click(WebElement element) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -27,7 +39,8 @@ public class SeleniumWrappers extends BaseTest {
 			//WebElement element = driver.findElement(locator);
 			element.click();
 		}catch(NoSuchElementException e) {
-			
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
 		}
 		
 	//	driver.findElement(locator).click();

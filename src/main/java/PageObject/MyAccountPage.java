@@ -24,11 +24,16 @@ public class MyAccountPage extends SeleniumWrappers{
 	@FindBy(name="login")
 	public WebElement submitButton;
 	
+	@FindBy(className = "woocommerce-MyAccount-content")
+	public WebElement myAccountContent;
+	
 	public void loginInApp(String user, String pass) {
 		
 		sendKeys(userField, user);
 		sendKeys(passField, pass);
 		click(submitButton);
+		
+		
 	}
 
 	
