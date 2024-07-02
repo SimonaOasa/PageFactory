@@ -7,3 +7,4 @@ target/
 db.properties
 test-output/
 credentials.properties
+screenshots
