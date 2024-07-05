@@ -6,7 +6,7 @@
              
         <classes>
               
-            <class name="Tests.ContactFormTest" ></class>
+            <class name="Tests.LoginTest" ></class>
             
         </classes>
         
