@@ -1,15 +1,21 @@
 package Tests;
 
 import static org.junit.Assert.assertTrue;
+import org.testng.annotations.Listeners;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Framework.Utils.PropertiesFileProcessor;
 import PageObject.MenuPage;
 import PageObject.MyAccountPage;
 import SeleniumUtils.BaseTest;
+import SeleniumUtils.TestNgListener;
 
+
+
+@Listeners(TestNgListener.class)
 public class LoginTest extends BaseTest {
 	
 	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credentials.properties");

@@ -8,4 +8,4 @@ db.properties
 test-output/
 credentials.properties
 screenshots
-logs
+logs/
