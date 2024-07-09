@@ -18,20 +18,20 @@ import org.openqa.selenium.OutputType;
 
 import com.google.common.io.Files;
 
-public class BaseTest {
+public class BaseTest extends Driver{
 
-	public static WebDriver driver;
+	public  WebDriver driver;
 	public BasePage app;
 	
-	
 
-	@Parameters({"appUrl"})
+	@Parameters({"appUrl", "browser"})
 	@BeforeClass(alwaysRun = true)
-	public void setup(String url) {
+	public void setup(String url, String browser) {
 		//FirefoxDriver()
 		//EdgeDriver()
 		//System.set.property("webdriver.chrome.driver", "path to chromedriver.exe")
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
+		driver = initDriver(browser);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(url);

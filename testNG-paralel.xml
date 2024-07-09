@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" parallel="tests" thread-count="2" >
+	
+	<!--Globalparameter fo Suite -->
+	<parameter name = "appUrl" value ="https://keyfood.ro/"/>
+	   <parameter name = "browser" value ="firefox"/>
+	   
+    <test name="FirefoxTest1" >
+		
+		<!--Local parameter specific to this <test> tag --><!-- -->
+       
+        <classes>
+              
+            <class name="Tests.ContactFormTest" ></class>
+            
+        </classes>
+        
+    </test> 
+    
+     <test name="FirefoxTest2" >
+		
+		<!--Local parameter specific to this <test> tag --><!-- -->
+      
+        <classes>
+              
+            <class name="Tests.LoginTest" ></class>
+            
+        </classes>
+        
+    </test> 
+    
+     
+    
+     
+    
+</suite>
